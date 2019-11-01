@@ -53,7 +53,39 @@ ENUM_NEXT(key_exchange_method_names, NTRU_112_BIT, NTRU_256_BIT, MODP_NULL,
 	"NTRU_256");
 ENUM_NEXT(key_exchange_method_names, NH_128_BIT, NH_128_BIT, NTRU_256_BIT,
 	"NEWHOPE_128");
-ENUM_NEXT(key_exchange_method_names, MODP_CUSTOM, MODP_CUSTOM, NH_128_BIT,
+ENUM_NEXT(key_exchange_method_names, KE_NEWHOPE_L1, KE_SABER_L5, NH_128_BIT,
+	"KE_NEWHOPE_L1",
+	"KE_NEWHOPE_L5",
+	"KE_FRODO_AES_L1",
+	"KE_FRODO_AES_L3",
+	"KE_FRODO_AES_L5",
+	"KE_FRODO_SHAKE_L1",
+	"KE_FRODO_SHAKE_L3",
+	"KE_FRODO_SHAKE_L5",
+	"KE_KYBER_L1",
+	"KE_KYBER_L3",
+	"KE_KYBER_L5",
+	"KE_BIKE1_L1",
+	"KE_BIKE1_L3",
+	"KE_BIKE1_L5",
+	"KE_BIKE2_L1",
+	"KE_BIKE2_L3",
+	"KE_BIKE2_L5",
+	"KE_BIKE3_L1",
+	"KE_BIKE3_L3",
+	"KE_BIKE3_L5",
+	"KE_SIKE_L1",
+	"KE_SIKE_L2",
+	"KE_SIKE_L3",
+	"KE_SIKE_L5",
+	"KE_NTRU_HPS_L1",
+	"KE_NTRU_HPS_L3",
+	"KE_NTRU_HPS_L5",
+	"KE_NTRU_HRSS_L3",
+	"KE_SABER_L1",
+	"KE_SABER_L3",
+	"KE_SABER_L5");
+ENUM_NEXT(key_exchange_method_names, MODP_CUSTOM, MODP_CUSTOM, KE_SABER_L5,
 	"MODP_CUSTOM");
 ENUM_END(key_exchange_method_names, MODP_CUSTOM);
 
@@ -558,6 +590,37 @@ bool key_exchange_verify_pubkey(key_exchange_method_t ke, chunk_t value)
 		case NTRU_192_BIT:
 		case NTRU_256_BIT:
 		case NH_128_BIT:
+		case KE_NEWHOPE_L1:
+		case KE_NEWHOPE_L5:
+		case KE_FRODO_AES_L1:
+		case KE_FRODO_AES_L3:
+		case KE_FRODO_AES_L5:
+		case KE_FRODO_SHAKE_L1:
+		case KE_FRODO_SHAKE_L3:
+		case KE_FRODO_SHAKE_L5:
+		case KE_KYBER_L1:
+		case KE_KYBER_L3:
+		case KE_KYBER_L5:
+		case KE_BIKE1_L1:
+		case KE_BIKE1_L3:
+		case KE_BIKE1_L5:
+		case KE_BIKE2_L1:
+		case KE_BIKE2_L3:
+		case KE_BIKE2_L5:
+		case KE_BIKE3_L1:
+		case KE_BIKE3_L3:
+		case KE_BIKE3_L5:
+		case KE_SIKE_L1:
+		case KE_SIKE_L2:
+		case KE_SIKE_L3:
+		case KE_SIKE_L5:
+		case KE_NTRU_HPS_L1:
+		case KE_NTRU_HPS_L3:
+		case KE_NTRU_HPS_L5:
+		case KE_NTRU_HRSS_L3:
+		case KE_SABER_L1:
+		case KE_SABER_L3:
+		case KE_SABER_L5:
 			/* verification currently not supported, do in plugin */
 			valid = FALSE;
 			break;
